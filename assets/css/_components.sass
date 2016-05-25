@@ -1,0 +1,61 @@
+//  Components
+    =========================
+    All content components used across the site.
+    =========================
+
+// Buttons
+
+.button
+    background: $color-text
+    color: $color-bg
+    display: inline-block
+    font: normal bold 1.2rem/#{1} $font-secondary
+    letter-spacing: 3px
+    padding: 20px 20px
+    text-transform: uppercase
+    transition: transform 0.25s
+
+    // This button grows slightly on hover
+
+    &:hover
+        transform: scale(1.05)
+
+
+// Inline Images
+
+.image
+    margin-bottom: 50px
+    max-width: 100%
+    width: 100%
+
+
+// Video Embeds
+// includes hack for responsive video embeds for 16:9 videos, more info:
+// http://alistapart.com/article/creating-intrinsic-ratios-for-video
+
+.video
+    height: 0
+    margin-bottom: 50px
+    padding-bottom: (100% * 9 / 16)
+    position: relative
+
+    iframe
+        height: 100%
+        left: 0
+        position: absolute
+        top: 0
+        width: 100%
+
+
+// Quotes
+
+.quote
+    margin: 75px 0
+
+.quote-text
+    font: italic normal 2.8rem/#{1.5} $font-primary
+    margin-bottom: 25px
+
+.quote-source
+    font: normal normal 1.4rem $font-secondary
+    text-transform: uppercase

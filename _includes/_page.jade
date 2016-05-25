@@ -1,0 +1,20 @@
+//- Page Template
+    =========================
+    This is the template which is applied to pages. In _layout.jade, this
+    template is included as a partial if the file is not in the /blog directory
+    and not the blog index.
+    =========================
+
+//- Include mixins from global mixins file
+
+include _mixins
+
+article.post
+    header.post-header
+        h2.post-title=title
+
+    .post-content
+        
+        //- Display content (for example, from about.jade)
+        
+        !=yield

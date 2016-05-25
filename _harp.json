@@ -1,0 +1,14 @@
+{
+    "globals": {
+        "sitename": "My blog",
+        "description": "This is my blog where I post stuff",
+        "author": "Me",
+        "email": "me@domain.com",
+        "twitter": "mytwitteraccount",
+
+        "navigation": [
+            { "title" : "Home", "link": "/" },
+            { "title" : "About", "link": "/about" }
+        ]
+    }
+}

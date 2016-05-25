@@ -1,0 +1,57 @@
+//- RSS Feed
+    =========================
+    Your blog's RSS feed in XML format. It loops through your posts and includes
+    them as partials to make it possible to display your content via RSS. If you
+    don't want to include your full blog posts in the RSS feed, replace the 
+    partial with an excerpt or summary. Just add this to your post meta data.
+    =========================
+
+//- Function to convert date to valid XML pubDate
+    Example here: http://www.w3schools.com/xml/rss_tag_pubdate_item.asp
+
+-   function convertPubDate(date) {
+-       var date = new Date(date);
+-       var pieces = date.toString().split(' ');
+-       var offsetTime = pieces[5].match(/[-+]\d{4}/);
+-       var offset = (offsetTime) ? offsetTime : pieces[5];
+-       var parts = [ pieces[0] + ',', pieces[2], pieces[1], pieces[3], pieces[4], offset ];
+-       return parts.join(' ');
+-   }
+
+//- Set up RSS feed with simplified Jade syntax
+
+doctype xml
+rss(version="2.0", xmlns:atom="http://www.w3.org/2005/Atom")
+    channel
+        title= title
+        link= url
+        description= description
+        
+        //- Use global variable url from _harp.json for absolute feed URL
+        
+        atom:link(href="#{ url }/feed.xml", rel="self", type="application/rss+xml")
+        
+        //- Loop through all posts in blog/_data.json
+            the variable post lets you access the post data, slug is the key
+        
+        for post, slug in public.blog._data
+            item
+                title=post.title
+                
+                //- Wrap content in CDATA so markup is not interpreted as XML
+                    and include post content as partial
+                
+                description <![CDATA[
+                    !=partial("blog/" + slug)
+                | ]]>
+
+                if post.date
+                    
+                    //- Call convertPubDate() function above to convert date
+                    
+                    pubDate=convertPubDate(post.date)
+
+                //- Use global variable url from _harp.json for absolute URLs
+
+                link #{ url }/blog/#{ slug }
+                guid(isPermaLink="true") #{ url }/blog/#{ slug }

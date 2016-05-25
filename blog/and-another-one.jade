@@ -1,0 +1,23 @@
+//- Blog post
+    =========================
+    This is an example for a blog post. All meta data is defined in _data.json.
+    =========================
+
+//- If you want to use mixins, include the mixins file via it's relative path
+
+include ../_includes/_mixins
+
+p IPhone flexitarian slow-carb, tofu 8-bit sartorial you probably haven't heard of them keffiyeh pinterest venmo pop-up ramps hammock. Four loko sustainable readymade, brooklyn tattooed selvage gentrify yuccie tote bag +1 wolf normcore. Waistcoat narwhal cronut artisan umami flexitarian, hoodie kombucha small batch sriracha jean shorts banh mi pitchfork cliche thundercats. Schlitz ramps forage lo-fi. Bicycle rights bitters sustainable gentrify heirloom, stumptown single-origin coffee pabst. Thundercats ennui man braid tousled small batch biodiesel sustainable, venmo flexitarian bicycle rights poutine. Chartreuse venmo pinterest, taxidermy YOLO knausgaard cronut food truck slow-carb sriracha.
+
+//- Use the quote mixin - the text following the mixin declaration is processed 
+    as a child and inserted in place of "block" (see _mixins.jade)
+
++quote("Rick Astley") Never gonna give you up, never gonna let you down, never gonna run around and desert you. Never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you.
+
+//- Below, you can see an example of the Jade inline syntax for links
+
+p Brunch hoodie roof party beard, banh mi williamsburg #[a(href="https://www.youtube.com/watch?v=DLzxrzFCyOs" target="_blank") mixtape] chartreuse cold-pressed meh bicycle rights. Schlitz selvage slow-carb, asymmetrical blue bottle master cleanse keytar fap. Banh mi bespoke flexitarian, normcore poutine selfies mixtape semiotics cray cliche. Chillwave retro twee listicle, flexitarian dreamcatcher biodiesel. +1 mustache brunch craft beer, butcher keffiyeh pork belly ethical chicharrones food truck tattooed. Austin street art intelligentsia forage listicle normcore single-origin coffee, craft beer health goth synth. Organic man bun roof party kickstarter, art party meditation scenester gastropub.
+
+//- Use the YouTube mixin to embed a video
+
++youtube("DLzxrzFCyOs")

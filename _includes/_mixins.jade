@@ -1,0 +1,53 @@
+//- Mixins
+    =========================
+    This file contains all mixins used across the site. You can add your own
+    custom mixins here. To use them, make sure _mixins is included at the top 
+    of the file.
+    =========================
+
+//- Include _functions.jade so you only have to include _mixins everywhere else
+
+include _functions
+
+
+//- Simple link styled as a button
+
+mixin button(link)
+    a.button(href=link)
+        
+        //- Children of the mixin, i.e. button text, are added as block
+        
+        block
+
+
+//- Inline image
+
+mixin image(file, alt)
+    .image
+        img(src="/blog/img/" + file alt=alt)
+
+
+//- YouTube Video embed
+
+mixin youtube(id)
+    .video
+        
+        //- Add YouTube video ID and include as iframe
+        
+        iframe(src='https://www.youtube.com/embed/' + id frameborder='0' allowfullscreen)
+
+
+//- Blockquote
+
+mixin quote(source)
+    blockquote.quote
+        p.quote-text
+            
+            //- Children of the mixin, i.e. quote text, are added as block
+            
+            block
+
+        //- If a source argument is specified, display quote footer
+
+        if source
+            footer.quote-source=source

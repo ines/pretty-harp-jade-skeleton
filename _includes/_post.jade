@@ -1,0 +1,45 @@
+//- Blog Post Template
+    =========================
+    This is the template which is applied to each blog post. In _layout.jade, 
+    this template is included as a partial if the file is in the /blog
+    directory.
+    =========================
+
+//- Include mixins from global mixins file
+
+include _mixins
+
+article.post
+    header.post-header
+        h2.post-title=title
+        
+        //- Use convertDate() function from _functions.jade,  included via 
+            _mixins.jade to convert post date
+        
+        .post-meta by #{author} on #{convertDate(date)} 
+            
+            //- If post has categories, display them as a comma-separated list
+            
+            if categories
+                | in #{categories.join(', ')}
+        
+        //- Display image if available
+        
+        if image
+            .post-image
+                img(src="/blog/img/" + image alt="title")
+    
+    .post-content
+        
+        //- Display content (for example, from this-is-a-post.jade)
+        
+        !=yield
+        
+        //- If post has readmore, display as link button
+        
+        if readmore
+            p.post-readmore
+                
+                //- Call button mixin from _mixins.jade
+                
+                +button(readmore) Read more

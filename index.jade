@@ -1,0 +1,32 @@
+//- Blog index
+    =========================
+    This is the blog index that shows previews of your blog posts.
+    =========================
+
+//- Include mixins from global mixins file
+
+include _includes/_mixins
+
+section.teasers
+    
+    //- Loop through all posts in blog/_data.json
+        the variable post lets you access the post data, slug is the key
+    
+    each post, slug in public.blog._data            
+        article.teaser
+            
+            //- Display image if available
+        
+            if post.image
+                .teaser-image
+                    a(href="/blog/" + slug)
+                        img(src="/blog/img/" + post.image alt=post.title)
+            
+            .teaser-text
+                h2.teaser-title
+                    a(href="/blog/" + slug)=post.title
+            
+                //- Use convertDate() function from _functions.jade, 
+                    included via _mixins.jade to convert post date
+                
+                .teaser-meta=convertDate(post.date)

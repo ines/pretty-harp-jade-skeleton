@@ -1,0 +1,15 @@
+//- Navigation
+    =========================
+    This is the navigation. It automatically uses the navigation items defined 
+    in _harp.json so you can easily change them without having to update this
+    file.
+    =========================
+
+nav.navigation
+    ul
+        
+        //- Use navigation items set in _harp.json and loop through them
+        
+        each item in navigation
+            li
+                a(href=item.link)=item.title

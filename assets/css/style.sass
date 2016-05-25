@@ -1,0 +1,83 @@
+//  Variables
+    =========================
+    These variables are used across the Sass files. You can change them here.
+    =========================
+
+// Fonts on the site (primary = main text, secondary = headlines / special)
+
+$font-primary: 'Karla', Tahoma, Geneva, sans-serif
+$font-secondary: 'Montserrat', arial, sans-serif
+
+// General colors
+
+$color-text: #222
+$color-bg: #fff
+
+// Width of the main text area
+
+$width-content: 800px
+
+// Width of teasers on homepage
+
+$width-teaser: 350px
+
+
+//  Imports
+    =========================
+    Import fonts and other Sass files.
+    =========================
+
+// This layout is using "Karla" and "Montserrat" hosted on Google Web Fonts
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Karla:400,400italic,700,700italic)
+
+// Import files from this folder
+
+@import reset
+@import header
+@import navigation
+@import footer
+@import post
+@import teasers
+@import components
+
+
+//  General Styles
+    =========================
+
+body
+    background: $color-bg
+    color: $color-text
+    font: normal normal 1.6rem/#{1.65} $font-primary
+
+main
+    margin: 0 auto
+    width: $width-content
+
+p
+    margin-bottom: 50px
+
+    a:not(.button)
+        border-bottom: 2px solid $color-text
+
+
+// Headline style
+
+%title
+    font: normal normal 3rem $font-secondary
+    letter-spacing: 5px
+    text-transform: uppercase
+
+// Small headline style
+
+%title-small
+    font: normal normal 2rem $font-secondary
+    letter-spacing: 3px
+    text-transform: uppercase
+
+// Style for special meta text
+
+%meta
+    font: normal normal 1.2rem $font-secondary
+    letter-spacing: 1px
+    text-transform: uppercase

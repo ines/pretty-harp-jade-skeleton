@@ -1,0 +1,23 @@
+{
+    "this-is-a-post": {
+        "title": "This is a post",
+        "categories": [ "test", "personal" ],
+        "date": "2016-06-01",
+        "image": "post1.jpg"
+    },
+
+    "this-is-another-post": {
+        "title": "This is another post",
+        "categories": [ "art", "thoughts" ],
+        "date": "2016-06-01",
+        "image": "post2.jpg",
+        "readmore": "https://ines.io"
+    },
+
+    "and-another-one": {
+        "title": "And another one",
+        "categories": [ "music" ],
+        "date": "2016-06-01",
+        "image": "post3.jpg"
+    }
+}
