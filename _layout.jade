@@ -10,47 +10,47 @@ html
     head
         meta(charset="utf-8")
         link(rel="stylesheet" href="/assets/css/style.css")
-        
-        //- Use site name as title for blog index and post title with site name 
+
+        //- Use site name as title for blog index and post title with site name
             for everything else
-        
-        title 
+
+        title
             if current.path[0] == 'index'
                 !=sitename
-                
+
             else
                 | #{title} | #{sitename}
 
-body
-    
-    //- Include _header.jade as partial
-    
-    !=partial("_includes/_header")
-    
-    main
-        
-        if current.path[0] == 'index'
-            
-            //- If this is the blog index, simply show the content directly
-            
-            !=yield
-        
-        else if current.path[0] == 'blog'
-            
-            //- If this is part of the /blog folder, include _post.jade
-            
-            !=partial("_includes/_post")
-        
-        else
-            
-            //- Otherwise include _page.jade
-            
-            !=partial("_includes/_page")
-    
-    //- Include footer as partial    
-    
-    !=partial("_includes/_footer")
-
-    //- Edit the scripts.js file to add custom JavaScript
-
     script(scr="/assets/js/scripts.js")
+    body
+
+        //- Include _header.jade as partial
+
+        !=partial("_includes/_header")
+
+        main
+
+            if current.path[0] == 'index'
+
+                //- If this is the blog index, simply show the content directly
+
+                !=yield
+
+            else if current.path[0] == 'blog'
+
+                //- If this is part of the /blog folder, include _post.jade
+
+                !=partial("_includes/_post")
+
+            else
+
+                //- Otherwise include _page.jade
+
+                !=partial("_includes/_page")
+
+        //- Include footer as partial
+
+        !=partial("_includes/_footer")
+
+        //- Edit the scripts.js file to add custom JavaScript
+
